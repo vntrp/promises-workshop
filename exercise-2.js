@@ -23,7 +23,7 @@ function getFirstChar(someString){
     })
 }
 
-getFirstChar("holaquetal");
+// getFirstChar("holaquetal");
 
 
 function getLastChar(someString){
@@ -35,7 +35,7 @@ function getLastChar(someString){
     })
 }
 
-getLastChar("holaquetal");
+// getLastChar("holaquetal");
 
 
 /////////////////////////////
@@ -58,11 +58,12 @@ function getLastCharCorrect(aString){
         });
 };
 
+/*
 getLastCharCorrect("hello").then(
     function(lastChar){
         console.log(lastChar)
     });
-
+*/
 
 function getFirstAndLastCharSeq(aString){
     var firstChar;
@@ -77,7 +78,33 @@ function getFirstAndLastCharSeq(aString){
             })
 }
 
-getFirstAndLastCharSeq("hello").then(
+getFirstAndLastCharSeq("aaaaabbbbb").then(
+    function(firstLast){
+        console.log(firstLast);
+    });
+    
+    
+/////////////////////////////
+// correction continued:
+/////////////////////////////
+
+function getFirstAndLastCharParallel(aString){
+    var firstCharPromise=getFirstChar(aString);
+    var lastCharPromise=getLastCharCorrect(aString);
+    return Promise.join(firstCharPromise, lastCharPromise, function(firstChar, lastChar){
+        return firstChar + lastChar;
+    });
+}
+
+/// or:
+
+function getFirstAndLastCharParallel2(aString){
+    return Promise.join(getFirstChar(aString), getLastCharCorrect(aString), function(firstChar, lastChar){
+        return firstChar + lastChar;
+    });
+}
+
+getFirstAndLastCharParallel2("wwwwwwzzzzz").then(
     function(firstLast){
         console.log(firstLast);
     });
