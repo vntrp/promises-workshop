@@ -1,4 +1,5 @@
-///// Exercise-1
+///// Exercise-1: Getting started!
+
 // Create a function called delay that takes a number of milliseconds, and returns a Promise that will be resolved with no value after the requested delay has passed.
 // Use your delay function to print messages "ONE", "TWO", "THREE", "...LIFTOFF!" to the console with a 1 second delay between each message
 
