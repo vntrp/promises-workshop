@@ -1,6 +1,5 @@
 # Promises Workshop
-We promise it won't hurt (too much)
------------------------------------
+*We promise it won't hurt (too much)*
 
 ## Basic instructions
 * Fork this repository and create a new Cloud9 project by cloning your fork
